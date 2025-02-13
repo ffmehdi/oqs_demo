@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OpenSSL Algorithm Benchmark Comparison</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+		/>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<style>
+			.container {
+				display: grid; /* Use grid for three columns */
+				grid-template-columns: 1fr 1fr 1fr; /* Three equal width columns */
+				gap: 20px; /* Spacing between columns */
+			}
+
+			.left-column {
+				/* Algorithms */
+				grid-column: 1;
+			}
+
+			.center-column {
+				/* Button and Charts */
+				grid-column: 2;
+				display: flex;
+				flex-direction: column;
+				align-items: center; /* Center content horizontally */
+			}
+
+			.right-column {
+				/* File inputs */
+				grid-column: 3;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end; /* Align to the right */
+			}
+
+			.file-input-container {
+				text-align: right;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="left-column">
+				<h2>Algorithms</h2>
+				<div class="mb-3">
+					<label class="form-label">Algorithm Type:</label><br />
+					<div class="form-check">
+						<input
+							class="form-check-input"
+							type="radio"
+							name="algoType"
+							id="kemRadio"
+							value="kem"
+							checked
+						/>
+						<label class="form-check-label" for="kemRadio"
+							>KEM</label
+						>
+					</div>
+					<div class="form-check">
+						<input
+							class="form-check-input"
+							type="radio"
+							name="algoType"
+							id="sigRadio"
+							value="signature"
+						/>
+						<label class="form-check-label" for="sigRadio"
+							>Signature</label
+						>
+					</div>
+				</div>
+				<div class="mb-3">
+					<div id="algorithmList"></div>
+				</div>
+			</div>
+
+			<div class="center-column">
+				<h2>OpenSSL Algorithm Benchmark Comparison</h2>
+				<button id="generateGraph" class="btn btn-primary mt-3">
+					Generate Graphs
+				</button>
+				<div id="plots" class="mt-5"></div>
+			</div>
+
+			<div class="right-column">
+				<div class="file-input-container">
+					<label for="kemFile" class="form-label">KEM CSV:</label>
+					<input
+						type="file"
+						class="form-control"
+						id="kemFile"
+						accept=".csv"
+					/>
+				</div>
+
+				<div class="file-input-container">
+					<label for="sigFile" class="form-label"
+						>Signature CSV:</label
+					>
+					<input
+						type="file"
+						class="form-control"
+						id="sigFile"
+						accept=".csv"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const kemFile = document.getElementById('kemFile');
+			const sigFile = document.getElementById('sigFile');
+			const algoTypeRadios = document.querySelectorAll(
+				'input[name="algoType"]'
+			);
+			const algorithmList = document.getElementById('algorithmList');
+			const generateGraphButton =
+				document.getElementById('generateGraph');
+			const plotsDiv = document.getElementById('plots');
+
+			let kemData = null;
+			let sigData = null;
+
+			function updateAlgorithmList() {
+				algorithmList.innerHTML = ''; // Clear previous options
+
+				const selectedType = document.querySelector(
+					'input[name="algoType"]:checked'
+				).value;
+				const data = selectedType === 'kem' ? kemData : sigData;
+
+				if (data) {
+					const algorithms = [
+						...new Set(data.map((item) => item.Algorithm)),
+					];
+					algorithms.forEach((algorithm) => {
+						const label = document.createElement('label');
+						const checkbox = document.createElement('input');
+						checkbox.type = 'checkbox';
+						checkbox.name = 'algorithms'; // Give all checkboxes the same name
+						checkbox.value = algorithm;
+						checkbox.id = algorithm; // Give unique IDs
+						label.htmlFor = algorithm; // Connect label to checkbox
+						label.appendChild(checkbox);
+						label.appendChild(document.createTextNode(algorithm)); // Add text after checkbox
+
+						algorithmList.appendChild(label);
+						algorithmList.appendChild(document.createElement('br')); // Add line breaks
+					});
+				}
+			}
+
+			kemFile.addEventListener('change', (event) => {
+				const file = event.target.files[0];
+				Papa.parse(file, {
+					header: true,
+					dynamicTyping: true,
+					complete: (results) => {
+						// Use complete callback for filtering
+						kemData = results.data.filter(
+							(row) =>
+								Object.values(row).some(
+									(value) => value !== null && value !== ''
+								) // more robust filtering
+						);
+						updateAlgorithmList();
+					},
+				});
+			});
+
+			sigFile.addEventListener('change', (event) => {
+				const file = event.target.files[0];
+				Papa.parse(file, {
+					header: true,
+					dynamicTyping: true,
+					complete: (results) => {
+						// Use complete callback for filtering
+						sigData = results.data.filter(
+							(row) =>
+								Object.values(row).some(
+									(value) => value !== null && value !== ''
+								) // more robust filtering
+						);
+
+						updateAlgorithmList();
+					},
+				});
+			});
+
+			algoTypeRadios.forEach((radio) => {
+				radio.addEventListener('change', updateAlgorithmList);
+			});
+
+			generateGraphButton.addEventListener('click', () => {
+				const selectedType = document.querySelector(
+					'input[name="algoType"]:checked'
+				)?.value;
+
+				if (!selectedType) {
+					alert('Select Algorithm Type');
+					return;
+				}
+
+				const selectedAlgorithms = Array.from(
+					document.querySelectorAll(
+						'input[name="algorithms"]:checked'
+					)
+				).map((checkbox) => checkbox.value);
+				if (selectedAlgorithms.length === 0) {
+					alert('Select at least one algorithm');
+					return;
+				}
+
+				const data = selectedType === 'kem' ? kemData : sigData;
+				const filteredData = data.filter((item) =>
+					selectedAlgorithms.includes(item.Algorithm)
+				);
+
+				plotsDiv.innerHTML = ''; // Clear previous plots
+
+				const metricColumns = Object.keys(data[0]).filter(
+					(key) => key !== 'Algorithm'
+				);
+
+				const colors = [
+					// Define an array of colors
+					'rgb(255, 99, 132)',
+					'rgb(54, 163, 235)',
+					'rgb(255, 205, 86)',
+					'rgb(75, 192, 192)',
+					'rgb(153, 102, 255)',
+					'rgb(255, 159, 64)',
+				];
+
+				metricColumns.forEach((metric) => {
+					const plotData = []; // Initialize plotData as an empty array
+					let metricLegend = metric;
+
+					// Iterate over selected algorithms
+					selectedAlgorithms.forEach((algorithm, index) => {
+						const algorithmData = filteredData.find(
+							(item) => item.Algorithm === algorithm
+						);
+						if (algorithmData) {
+							let value = algorithmData[metric];
+
+							// Remove 's' and convert to number if present
+							if (
+								typeof value === 'string' &&
+								value.endsWith('s')
+							) {
+								value = Number(value.slice(0, -1));
+								metricLegend = `${metric} (s)`;
+								console.log(
+									`${algorithm} ${metricLegend} ${value}`
+								);
+							} else {
+								value = Number(value);
+							}
+
+							plotData.push({
+								x: [algorithm],
+								y: [value], // Use the cleaned value
+								type: 'bar',
+								name: algorithm,
+								marker: {
+									color: colors[index % colors.length],
+								},
+							});
+						}
+					});
+
+					const layout = {
+						title: `${selectedType.toUpperCase()} Algorithm Comparison (${metric})`,
+						xaxis: { title: 'Algorithm', automargin: true },
+						yaxis: { title: metricLegend, rangemode: 'tozero' },
+						barmode: 'group',
+					};
+
+					Plotly.newPlot(
+						plotsDiv.appendChild(document.createElement('div')),
+						plotData,
+						layout
+					);
+				});
+			});
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+	</body>
+</html>

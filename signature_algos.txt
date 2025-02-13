@@ -1,0 +1,749 @@
+  { 1.2.840.113549.1.1.1, 2.5.8.1.1, RSA, rsaEncryption } @ default
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      mgf1-properties: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.10040.4.1, 1.3.14.3.2.12, DSA, DSA-old, dsaEncryption, dsaEncryption-old } @ default
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.10040.4.3, 1.3.14.3.2.27, DSA-SHA, DSA-SHA-1, DSA-SHA1, DSA-SHA1-old, dsaWithSHA, dsaWithSHA1, dsaWithSHA1-old } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.3.101.112, ED25519 } @ default
+    settable operation parameters:
+      instance: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      instance: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+  { 1.3.101.113, ED448 } @ default
+    settable operation parameters:
+      instance: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      instance: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+  { 1.2.156.10197.1.301, SM2 } @ default
+    settable operation parameters:
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      distid: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+  { 2.16.840.1.101.3.4.3.1, DSA-SHA2-224, DSA-SHA224, dsa_with_SHA224 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.2, DSA-SHA2-256, DSA-SHA256, dsa_with_SHA256 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.1.101.3.4.3.3, DSA-SHA2-384, DSA-SHA384, dsa_with_SHA384, id-dsa-with-sha384 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.1.101.3.4.3.4, DSA-SHA2-512, DSA-SHA512, dsa_with_SHA512, id-dsa-with-sha512 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.5, DSA-SHA3-224, dsa_with_SHA3-224, id-dsa-with-sha3-224 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.6, DSA-SHA3-256, dsa_with_SHA3-256, id-dsa-with-sha3-256 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.7, DSA-SHA3-384, dsa_with_SHA3-384, id-dsa-with-sha3-384 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.8, DSA-SHA3-512, dsa_with_SHA3-512, id-dsa-with-sha3-512 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.3.36.3.3.1.2, ripemd160WithRSA, RSA-RIPEMD160 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.113549.1.1.5, RSA-SHA-1, RSA-SHA1, sha1WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.113549.1.1.14, RSA-SHA2-224, RSA-SHA224, sha224WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.113549.1.1.11, RSA-SHA2-256, RSA-SHA256, sha256WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.113549.1.1.12, RSA-SHA2-384, RSA-SHA384, sha384WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.113549.1.1.13, RSA-SHA2-512, RSA-SHA512, sha512WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.113549.1.1.15, RSA-SHA2-512/224, RSA-SHA512-224, sha512-224WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.840.113549.1.1.16, RSA-SHA2-512/256, RSA-SHA512-256, sha512-256WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 2.16.840.1.101.3.4.3.13, id-rsassa-pkcs1-v1_5-with-sha3-224, RSA-SHA3-224 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 2.16.840.1.101.3.4.3.14, id-rsassa-pkcs1-v1_5-with-sha3-256, RSA-SHA3-256 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 2.16.840.1.101.3.4.3.15, id-rsassa-pkcs1-v1_5-with-sha3-384, RSA-SHA3-384 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 2.16.840.1.101.3.4.3.16, id-rsassa-pkcs1-v1_5-with-sha3-512, RSA-SHA3-512 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  { 1.2.156.10197.1.504, RSA-SM3, sm3WithRSAEncryption } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      pad-mode: UTF8 encoded string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+      mgf1-digest: UTF8 encoded string (arbitrary size)
+      saltlen: UTF8 encoded string (arbitrary size)
+  ED25519ph @ default
+    settable operation parameters:
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      instance: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+  ED25519ctx @ default
+    settable operation parameters:
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      instance: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+  ED448ph @ default
+    settable operation parameters:
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      instance: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+  ECDSA @ default
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      properties: UTF8 encoded string (arbitrary size)
+      kat: unsigned integer (max 4 bytes large)
+      nonce-type: unsigned integer (max 4 bytes large)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.10045.4.1, ECDSA-SHA-1, ECDSA-SHA1, ecdsa-with-SHA1 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.10045.4.3.1, ECDSA-SHA2-224, ECDSA-SHA224, ecdsa-with-SHA224 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.10045.4.3.2, ECDSA-SHA2-256, ECDSA-SHA256, ecdsa-with-SHA256 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.10045.4.3.3, ECDSA-SHA2-384, ECDSA-SHA384, ecdsa-with-SHA384 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 1.2.840.10045.4.3.4, ECDSA-SHA2-512, ECDSA-SHA512, ecdsa-with-SHA512 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.9, ECDSA-SHA3-224, ecdsa_with_SHA3-224, id-ecdsa-with-sha3-224 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.10, ECDSA-SHA3-256, ecdsa_with_SHA3-256, id-ecdsa-with-sha3-256 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.11, ECDSA-SHA3-384, ecdsa_with_SHA3-384, id-ecdsa-with-sha3-384 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  { 2.16.840.1.101.3.4.3.12, ECDSA-SHA3-512, ecdsa_with_SHA3-512, id-ecdsa-with-sha3-512 } @ default
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest-size: unsigned integer (max 8 bytes large)
+      digest: UTF8 encoded string (arbitrary size)
+      nonce-type: unsigned integer (max 4 bytes large)
+  HMAC @ default
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      key: octet string (arbitrary size)
+      digest-noinit: integer (max 4 bytes large)
+      digest-oneshot: integer (max 4 bytes large)
+      tls-data-size: unsigned integer (max 8 bytes large)
+  SIPHASH @ default
+    settable operation parameters:
+      size: unsigned integer (max 8 bytes large)
+      key: octet string (arbitrary size)
+      c-rounds: unsigned integer (max 4 bytes large)
+      d-rounds: unsigned integer (max 4 bytes large)
+  POLY1305 @ default
+    settable operation parameters:
+      key: octet string (arbitrary size)
+  CMAC @ default
+    settable operation parameters:
+      cipher: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      key: octet string (arbitrary size)
+  dilithium2 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_dilithium2 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  rsa3072_dilithium2 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  dilithium3 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p384_dilithium3 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  dilithium5 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p521_dilithium5 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa44 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_mldsa44 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  rsa3072_mldsa44 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa44_pss2048 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa44_rsa2048 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa44_ed25519 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa44_p256 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa44_bp256 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa65 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p384_mldsa65 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa65_pss3072 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa65_rsa3072 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa65_p256 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa65_bp256 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa65_ed25519 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa87 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p521_mldsa87 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa87_p384 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa87_bp384 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mldsa87_ed448 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  falcon512 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_falcon512 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  rsa3072_falcon512 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  falconpadded512 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_falconpadded512 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  rsa3072_falconpadded512 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  falcon1024 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p521_falcon1024 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  falconpadded1024 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p521_falconpadded1024 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  sphincssha2128fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_sphincssha2128fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  rsa3072_sphincssha2128fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  sphincssha2128ssimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_sphincssha2128ssimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  rsa3072_sphincssha2128ssimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  sphincssha2192fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p384_sphincssha2192fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  sphincsshake128fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_sphincsshake128fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  rsa3072_sphincsshake128fsimple @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mayo1 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_mayo1 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mayo2 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p256_mayo2 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mayo3 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p384_mayo3 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  mayo5 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  p521_mayo5 @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
+  CROSSrsdp128balanced @ oqsprovider
+    settable operation parameters:
+      digest: UTF8 encoded string (arbitrary size)
+      properties: UTF8 encoded string (arbitrary size)
+      context-string: octet string (arbitrary size)
+    retrievable operation parameters:
+      algorithm-id: octet string (arbitrary size)
+      digest: UTF8 encoded string (arbitrary size)
